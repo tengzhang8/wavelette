@@ -1,0 +1,17 @@
+
+Wavelette.name=Wavelette
+Wavelette.build.mcu=cortex-m0
+Wavelette.build.f_cpu=16000000
+Wavelette.build.core=arduino
+Wavelette.build.extra_flags=-mthumb
+Wavelette.build.ldscript=linker_scripts/gcc/Wavelette.ld
+Wavelette.build.variant=Wavelette
+Wavelette.build.variant_system_include="-I{build.system.path}/Wavelette" "-I{build.system.path}/Wavelette/Include" "-I{build.system.path}/CMSIS/CMSIS/Include"
+Wavelette.build.variant_system_lib=wavelette_system.a
+
+# required to avoid arduino ide exception on upload
+Wavelette.upload.protocol=
+
+# sizer will not run if this is not defined
+# 128KB
+Wavelette.upload.maximum_size=131072
