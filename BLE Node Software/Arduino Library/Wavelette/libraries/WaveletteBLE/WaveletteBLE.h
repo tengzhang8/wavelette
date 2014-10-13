@@ -3,6 +3,7 @@
 #ifndef _WAVELETTEBLE_H_
 #define _WAVELETTEBLE_H_
 
+#include "Stream.h"
 #include <stdint.h>
 #include <stdbool.h>
 #include "wavelette_ble_uart.h"
