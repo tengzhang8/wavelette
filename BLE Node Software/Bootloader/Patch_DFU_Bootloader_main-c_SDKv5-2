@@ -1,0 +1,32 @@
+53,54c53,55
+< #define BOOTLOADER_BUTTON_PIN           BUTTON_7                                                /**< Button used to enter SW update mode. */
+< 
+---
+> //#define BOOTLOADER_BUTTON_PIN           BUTTON7                                                 /**< Button used to enter SW update mode. */
+> #define BOOTLOADER_BUTTON_PIN           16                                                 /**< Button used to enter SW update mode. */
+> //TZ 16 for eval kit 11 for wavelette
+120a122,123
+> 	//nrf_gpio_cfg_output(6);
+> 	nrf_gpio_cfg_output(18);
+161,162c164,165
+<                              BUTTON_PULL, 
+<                              NRF_GPIO_PIN_SENSE_LOW);
+---
+>                              NRF_GPIO_PIN_PULLUP, 
+>                              NRF_GPIO_PIN_SENSE_LOW);//TZ
+187c190
+<     SOFTDEVICE_HANDLER_INIT(NRF_CLOCK_LFCLKSRC_XTAL_20_PPM, true);
+---
+>     SOFTDEVICE_HANDLER_INIT(NRF_CLOCK_LFCLKSRC_SYNTH_250_PPM, true); //TZ
+229c232,234
+<         nrf_gpio_pin_set(LED_2);
+---
+>         //nrf_gpio_pin_set(LED_2);
+> 		//nrf_gpio_pin_clear(6);
+> 		nrf_gpio_pin_set(18);
+235c240,242
+<         nrf_gpio_pin_clear(LED_2);
+---
+>         //nrf_gpio_pin_clear(LED_2);
+> 		//nrf_gpio_pin_set(6);
+> 		nrf_gpio_pin_clear(18);
